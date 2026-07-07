@@ -8,7 +8,6 @@
         --laranja: #ee4d2d;
         --laranja-2: #ff6a39;
         --laranja-3: #ff8a50;
-        --fundo: #fff7f2;
         --texto: #1f2937;
         --cinza: #6b7280;
         --verde: #16a34a;
@@ -79,34 +78,33 @@
 
     .container {
         width: 100%;
-        max-width: 980px;
+        max-width: 1030px;
     }
 
     .hero {
         overflow: hidden;
         position: relative;
-        background: rgba(255, 255, 255, 0.92);
+        background: rgba(255, 255, 255, 0.94);
         backdrop-filter: blur(10px);
         border: 1px solid var(--borda);
         border-radius: 34px;
         box-shadow: var(--sombra);
     }
 
-    .hero::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background:
-            linear-gradient(120deg, rgba(238, 77, 45, 0.10), transparent 34%),
-            linear-gradient(300deg, rgba(255, 106, 57, 0.12), transparent 38%);
-        pointer-events: none;
-    }
-
     .topo {
         position: relative;
-        padding: 34px 34px 26px;
-        background: linear-gradient(135deg, var(--laranja), var(--laranja-2));
+        padding: 34px;
+        background:
+            radial-gradient(circle at 90% 20%, rgba(255,255,255,0.22), transparent 24%),
+            linear-gradient(135deg, var(--laranja), var(--laranja-2));
         color: white;
+    }
+
+    .topo-grid {
+        display: grid;
+        grid-template-columns: 1fr 180px;
+        gap: 24px;
+        align-items: center;
     }
 
     .topo-linha {
@@ -116,20 +114,22 @@
     }
 
     .marca {
-        width: 78px;
-        height: 78px;
-        border-radius: 24px;
+        width: 86px;
+        height: 86px;
+        border-radius: 26px;
         background: white;
         display: flex;
         align-items: center;
         justify-content: center;
         box-shadow: 0 16px 36px rgba(0, 0, 0, 0.18);
         flex: 0 0 auto;
+        padding: 10px;
     }
 
-    .marca svg {
-        width: 58px;
-        height: 58px;
+    .logo-img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
         display: block;
     }
 
@@ -154,17 +154,43 @@
 
     h1 {
         margin: 0;
-        font-size: 36px;
+        font-size: 38px;
         line-height: 1.05;
         letter-spacing: -0.8px;
     }
 
     .subtitulo {
         margin: 10px 0 0;
-        max-width: 690px;
+        max-width: 710px;
         font-size: 16px;
-        line-height: 1.55;
-        color: rgba(255, 255, 255, 0.92);
+        line-height: 1.58;
+        color: rgba(255, 255, 255, 0.94);
+    }
+
+    .shopito-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .shopito-img {
+        width: 168px;
+        max-width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 28px;
+        filter: drop-shadow(0 18px 28px rgba(0,0,0,0.18));
+        animation: flutuar 3.2s ease-in-out infinite;
+    }
+
+    @keyframes flutuar {
+        0%, 100% {
+            transform: translateY(0) rotate(-1deg);
+        }
+
+        50% {
+            transform: translateY(-7px) rotate(1deg);
+        }
     }
 
     .status-bar {
@@ -382,7 +408,19 @@
         color: var(--laranja);
     }
 
-    @media (max-width: 840px) {
+    @media (max-width: 900px) {
+        .topo-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .shopito-box {
+            justify-content: flex-start;
+        }
+
+        .shopito-img {
+            width: 132px;
+        }
+
         .status-bar {
             grid-template-columns: 1fr;
         }
@@ -432,14 +470,13 @@
         }
 
         .marca {
-            width: 68px;
-            height: 68px;
-            border-radius: 20px;
+            width: 74px;
+            height: 74px;
+            border-radius: 22px;
         }
 
-        .marca svg {
-            width: 50px;
-            height: 50px;
+        .shopito-img {
+            width: 112px;
         }
 
         .passo {
@@ -466,41 +503,35 @@
         <div class="hero">
 
             <header class="topo">
-                <div class="topo-linha">
-                    <div class="marca" title="Problem Solver Bot">
-                        <svg viewBox="0 0 100 100" aria-hidden="true">
-                            <path
-                                d="M27 31 L73 31 L78 82 C78.7 88.8 74.3 93 67.5 93 L32.5 93 C25.7 93 21.3 88.8 22 82 L27 31 Z"
-                                fill="#ee4d2d"
-                            />
-                            <path
-                                d="M36 32 C36 18 44 10 50 10 C56 10 64 18 64 32"
-                                fill="none"
-                                stroke="#ee4d2d"
-                                stroke-width="7"
-                                stroke-linecap="round"
-                            />
-                            <path
-                                d="M62.5 47.5 C59 43.5 54 41.8 49 42.2 C43.4 42.7 39.5 45.7 39.3 50.1 C39 55.2 44.1 57.1 50.2 58.7 C56.4 60.3 61.7 62.1 61.3 67.7 C60.9 73.7 55.3 77.1 48.9 76.7 C43.9 76.4 39.2 74.5 35.8 70.6"
-                                fill="none"
-                                stroke="#ffffff"
-                                stroke-width="7"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            />
-                        </svg>
+                <div class="topo-grid">
+                    <div class="topo-linha">
+                        <div class="marca" title="Shopee">
+                            <img
+                                class="logo-img"
+                                src="./assets/shopee-logo.png"
+                                alt="Shopee"
+                            >
+                        </div>
+
+                        <div class="titulo-area">
+                            <div class="badge">⚡ INSTALADOR WMS</div>
+
+                            <h1>Problem Solver Bot</h1>
+
+                            <p class="subtitulo">
+                                O Problem Solver Bot é o bot dos PS: criado para agilizar rotinas, melhorar consultas,
+                                padronizar processos e transformar tarefas repetitivas do WMS em ações mais rápidas,
+                                simples e inteligentes.
+                            </p>
+                        </div>
                     </div>
 
-                    <div class="titulo-area">
-                        <div class="badge">⚡ INSTALADOR WMS</div>
-
-                        <h1>Problem Solver Bot</h1>
-
-                        <p class="subtitulo">
-                            O Problem Solver Bot é o bot dos PS: criado para agilizar rotinas, melhorar consultas,
-                            padronizar processos e transformar tarefas repetitivas do WMS em ações mais rápidas,
-                            simples e inteligentes.
-                        </p>
+                    <div class="shopito-box">
+                        <img
+                            class="shopito-img"
+                            src="./assets/shopito-aprova.gif"
+                            alt="Shopito aprova"
+                        >
                     </div>
                 </div>
             </header>
