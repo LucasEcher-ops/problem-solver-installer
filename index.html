@@ -1,4 +1,4 @@
-<!DOCTYPE html> <html lang="pt-BR"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Problem Solver Bot | Instalador</title>
+<!DOCTYPE html> <html lang="pt-BR"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Problem Solver Bot | Instalação</title>
 <style>
     * {
         box-sizing: border-box;
@@ -137,21 +137,6 @@
         min-width: 0;
     }
 
-    .badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 7px 11px;
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.18);
-        border: 1px solid rgba(255, 255, 255, 0.24);
-        color: white;
-        font-size: 12px;
-        font-weight: 800;
-        letter-spacing: 0.3px;
-        margin-bottom: 10px;
-    }
-
     h1 {
         margin: 0;
         font-size: 38px;
@@ -160,11 +145,11 @@
     }
 
     .subtitulo {
-        margin: 10px 0 0;
-        max-width: 710px;
+        margin: 12px 0 0;
+        max-width: 730px;
         font-size: 16px;
-        line-height: 1.58;
-        color: rgba(255, 255, 255, 0.94);
+        line-height: 1.62;
+        color: rgba(255, 255, 255, 0.95);
     }
 
     .shopito-box {
@@ -193,40 +178,67 @@
         }
     }
 
-    .status-bar {
-        position: relative;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 12px;
-        padding: 18px 34px 0;
-        margin-top: -2px;
-    }
-
-    .status-card {
-        background: white;
-        border: 1px solid rgba(238, 77, 45, 0.14);
-        border-radius: 18px;
-        padding: 16px;
-        box-shadow: 0 12px 30px rgba(17, 24, 39, 0.06);
-    }
-
-    .status-card strong {
-        display: block;
-        font-size: 14px;
-        color: #111827;
-        margin-bottom: 4px;
-    }
-
-    .status-card span {
-        display: block;
-        font-size: 12px;
-        color: var(--cinza);
-        line-height: 1.35;
-    }
-
     .conteudo {
         position: relative;
-        padding: 26px 34px 34px;
+        padding: 28px 34px 34px;
+    }
+
+    .intro-simples {
+        margin-bottom: 20px;
+        padding: 20px;
+        border-radius: 24px;
+        background: #fffaf7;
+        border: 1px solid rgba(238, 77, 45, 0.16);
+    }
+
+    .intro-simples h2 {
+        margin: 0 0 8px;
+        font-size: 21px;
+        color: #111827;
+    }
+
+    .intro-simples p {
+        margin: 0;
+        color: #4b5563;
+        font-size: 15px;
+        line-height: 1.65;
+    }
+
+    .video-card {
+        margin-bottom: 20px;
+        padding: 20px;
+        border-radius: 24px;
+        background: #ffffff;
+        border: 1px solid #f1e1da;
+        box-shadow: 0 14px 36px rgba(17, 24, 39, 0.06);
+    }
+
+    .video-card h2 {
+        margin: 0 0 8px;
+        font-size: 21px;
+        color: #111827;
+    }
+
+    .video-card p {
+        margin: 0 0 14px;
+        color: #5b6472;
+        font-size: 14px;
+        line-height: 1.55;
+    }
+
+    .video-frame {
+        width: 100%;
+        border-radius: 20px;
+        overflow: hidden;
+        background: #111827;
+        border: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .video-frame iframe {
+        width: 100%;
+        height: 430px;
+        display: block;
+        border: 0;
     }
 
     .grid {
@@ -277,7 +289,7 @@
         margin: 0;
         color: #5b6472;
         font-size: 14px;
-        line-height: 1.5;
+        line-height: 1.55;
     }
 
     .botao {
@@ -320,80 +332,24 @@
 
     .box-info {
         margin-top: 20px;
-        display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        gap: 16px;
-    }
-
-    .alerta,
-    .atalhos {
         border-radius: 24px;
         background: #fffaf7;
         border: 1px solid rgba(238, 77, 45, 0.16);
         padding: 20px;
     }
 
-    .alerta h3,
-    .atalhos h3 {
+    .box-info h3 {
         margin: 0 0 10px;
         font-size: 17px;
         color: #111827;
     }
 
-    .alerta ul {
+    .box-info ul {
         margin: 0;
         padding-left: 19px;
         color: #4b5563;
         font-size: 14px;
-        line-height: 1.7;
-    }
-
-    .atalhos {
-        background: #ffffff;
-    }
-
-    .mini-btn {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 44px;
-        margin-top: 10px;
-        border-radius: 14px;
-        border: 1px solid rgba(238, 77, 45, 0.22);
-        background: #fff7f2;
-        color: var(--laranja);
-        font-weight: 900;
-        cursor: pointer;
-        text-decoration: none;
-        font-size: 14px;
-    }
-
-    .mini-btn:hover {
-        background: #fff0e7;
-    }
-
-    .toast {
-        position: fixed;
-        left: 50%;
-        bottom: 24px;
-        transform: translateX(-50%) translateY(20px);
-        opacity: 0;
-        background: #111827;
-        color: white;
-        padding: 13px 18px;
-        border-radius: 999px;
-        font-size: 14px;
-        font-weight: 800;
-        box-shadow: 0 16px 36px rgba(0,0,0,0.22);
-        transition: all 0.2s ease;
-        z-index: 99;
-        pointer-events: none;
-    }
-
-    .toast.ativo {
-        opacity: 1;
-        transform: translateX(-50%) translateY(0);
+        line-height: 1.8;
     }
 
     .rodape {
@@ -421,10 +377,6 @@
             width: 132px;
         }
 
-        .status-bar {
-            grid-template-columns: 1fr;
-        }
-
         .passo {
             grid-template-columns: 52px 1fr;
         }
@@ -432,10 +384,6 @@
         .passo .botao {
             grid-column: 1 / -1;
             width: 100%;
-        }
-
-        .box-info {
-            grid-template-columns: 1fr;
         }
     }
 
@@ -450,10 +398,6 @@
 
         .conteudo {
             padding: 22px;
-        }
-
-        .status-bar {
-            padding: 16px 22px 0;
         }
 
         .rodape {
@@ -477,6 +421,10 @@
 
         .shopito-img {
             width: 112px;
+        }
+
+        .video-frame iframe {
+            height: 240px;
         }
 
         .passo {
@@ -514,14 +462,12 @@
                         </div>
 
                         <div class="titulo-area">
-                            <div class="badge">⚡ INSTALADOR WMS</div>
-
                             <h1>Problem Solver Bot</h1>
 
                             <p class="subtitulo">
-                                O Problem Solver Bot é o bot dos PS: criado para agilizar rotinas, melhorar consultas,
-                                padronizar processos e transformar tarefas repetitivas do WMS em ações mais rápidas,
-                                simples e inteligentes.
+                                O Problem Solver Bot é uma ferramenta criada para ajudar os PS no dia a dia.
+                                Ele deixa algumas tarefas do WMS mais rápidas, reduz etapas repetitivas e facilita
+                                consultas que normalmente tomariam mais tempo.
                             </p>
                         </div>
                     </div>
@@ -536,34 +482,46 @@
                 </div>
             </header>
 
-            <div class="status-bar">
-                <div class="status-card">
-                    <strong>1 instalação</strong>
-                    <span>Instala o loader apenas uma vez na máquina.</span>
-                </div>
-
-                <div class="status-card">
-                    <strong>Atualização central</strong>
-                    <span>O bot busca a versão mais nova pelo WebApp.</span>
-                </div>
-
-                <div class="status-card">
-                    <strong>Uso no WMS</strong>
-                    <span>Depois de instalado, é só abrir o WMS normalmente.</span>
-                </div>
-            </div>
-
             <section class="conteudo">
+
+                <div class="intro-simples">
+                    <h2>Como funciona a instalação?</h2>
+
+                    <p>
+                        A instalação é feita em três passos simples. Primeiro instalamos uma extensão no navegador,
+                        depois instalamos o Problem Solver Bot, e por último abrimos o WMS normalmente.
+                        Depois de instalado uma vez, não precisa repetir o processo todos os dias.
+                    </p>
+                </div>
+
+                <div class="video-card">
+                    <h2>Vídeo com o passo a passo</h2>
+
+                    <p>
+                        Assista ao vídeo abaixo para acompanhar a instalação. Depois, é só seguir os botões na mesma ordem.
+                    </p>
+
+                    <div class="video-frame">
+                        <iframe
+                            src="https://www.youtube.com/embed/yynMnugLXZE"
+                            title="Tutorial de instalação do Problem Solver Bot"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen
+                        ></iframe>
+                    </div>
+                </div>
+
                 <div class="grid">
 
                     <div class="passo">
                         <div class="numero">1</div>
 
                         <div>
-                            <h2>Instalar Tampermonkey</h2>
+                            <h2>Instalar a extensão necessária</h2>
                             <p>
-                                Clique no botão, instale a extensão no Chrome e depois volte para esta página.
-                                Se já tiver instalado, pode ir direto para o passo 2.
+                                Clique no botão ao lado e instale o Tampermonkey no navegador.
+                                Ele é necessário para permitir que o Problem Solver Bot funcione dentro do WMS.
+                                Se essa extensão já estiver instalada, pode ir direto para o passo 2.
                             </p>
                         </div>
 
@@ -573,7 +531,7 @@
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            Instalar Tampermonkey
+                            Instalar extensão
                         </a>
                     </div>
 
@@ -581,10 +539,10 @@
                         <div class="numero">2</div>
 
                         <div>
-                            <h2>Instalar Problem Solver Bot</h2>
+                            <h2>Instalar o Problem Solver Bot</h2>
                             <p>
-                                Depois do Tampermonkey instalado, clique aqui e confirme a instalação do script.
-                                Esse é o loader que carrega o bot central.
+                                Depois que a extensão estiver instalada, clique neste botão.
+                                Vai abrir uma tela de confirmação. Nessa tela, clique em instalar.
                             </p>
                         </div>
 
@@ -594,7 +552,7 @@
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            Instalar Bot
+                            Instalar bot
                         </a>
                     </div>
 
@@ -604,8 +562,8 @@
                         <div>
                             <h2>Abrir o WMS</h2>
                             <p>
-                                Após instalar o bot, abra o WMS. O Problem Solver Bot deve carregar automaticamente
-                                quando a página terminar de abrir.
+                                Após instalar, abra o WMS normalmente.
+                                O Problem Solver Bot será carregado sozinho quando a página terminar de abrir.
                             </p>
                         </div>
 
@@ -622,79 +580,22 @@
                 </div>
 
                 <div class="box-info">
-                    <div class="alerta">
-                        <h3>Checklist rápido</h3>
+                    <h3>Se algo não funcionar</h3>
 
-                        <ul>
-                            <li>Instale o Tampermonkey antes do bot.</li>
-                            <li>Confirme a instalação quando a tela do Tampermonkey abrir.</li>
-                            <li>Se o passo 2 não abrir, feche e abra o navegador novamente.</li>
-                            <li>Se já tiver Tampermonkey instalado, pule direto para instalar o bot.</li>
-                        </ul>
-                    </div>
-
-                    <div class="atalhos">
-                        <h3>Atalhos</h3>
-
-                        <button class="mini-btn" onclick="copiarLinkPagina()">
-                            Copiar link desta página
-                        </button>
-
-                        <button class="mini-btn" onclick="copiarLinkBot()">
-                            Copiar link do bot
-                        </button>
-
-                        <a
-                            class="mini-btn"
-                            href="https://gist.githubusercontent.com/LucasEcher-ops/64e8aa2c64b4569ad03f7100f7afebe1/raw/problem-solver-bot-loader.user.js"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Ver loader raw
-                        </a>
-                    </div>
+                    <ul>
+                        <li>Confirme se o Tampermonkey foi instalado no navegador.</li>
+                        <li>Depois de instalar a extensão, feche e abra o navegador novamente.</li>
+                        <li>Volte nesta página e tente clicar em “Instalar bot” outra vez.</li>
+                        <li>Se já instalou o bot, abra o WMS e aguarde a página carregar completamente.</li>
+                    </ul>
                 </div>
             </section>
 
             <footer class="rodape">
-                <strong>Problem Solver Bot</strong> · Instalador interno · Lucas Echer
+                <strong>Problem Solver Bot</strong> · Instalação interna · Lucas Echer
             </footer>
 
         </div>
     </section>
 </main>
-
-<div id="toast" class="toast">Link copiado</div>
-
-<script>
-    const LINK_BOT = 'https://www.tampermonkey.net/script_installation.php#url=https://gist.githubusercontent.com/LucasEcher-ops/64e8aa2c64b4569ad03f7100f7afebe1/raw/problem-solver-bot-loader.user.js';
-
-    function mostrarToast(texto) {
-        const toast = document.getElementById('toast');
-        toast.textContent = texto;
-        toast.classList.add('ativo');
-
-        setTimeout(function () {
-            toast.classList.remove('ativo');
-        }, 2200);
-    }
-
-    async function copiarTexto(texto, mensagem) {
-        try {
-            await navigator.clipboard.writeText(texto);
-            mostrarToast(mensagem || 'Link copiado');
-        } catch (erro) {
-            mostrarToast('Não consegui copiar automaticamente');
-            console.error('Erro ao copiar:', erro);
-        }
-    }
-
-    function copiarLinkPagina() {
-        copiarTexto(window.location.href, 'Link da página copiado');
-    }
-
-    function copiarLinkBot() {
-        copiarTexto(LINK_BOT, 'Link do bot copiado');
-    }
-</script>
 </body> </html>
