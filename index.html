@@ -1,0 +1,241 @@
+<!DOCTYPE html> <html lang="pt-BR"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Instalar Problem Solver Bot</title>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #fff7ed, #f4f4f5);
+        color: #1f2937;
+    }
+
+    .pagina {
+        min-height: 100vh;
+        padding: 32px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 760px;
+        background: #ffffff;
+        border-radius: 26px;
+        padding: 34px;
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.16);
+        border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .topo {
+        text-align: center;
+        margin-bottom: 28px;
+    }
+
+    .logo {
+        width: 72px;
+        height: 72px;
+        border-radius: 22px;
+        margin: 0 auto 16px;
+        background: linear-gradient(135deg, #f97316, #fb923c);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        font-size: 34px;
+        font-weight: 900;
+        box-shadow: 0 14px 34px rgba(249, 115, 22, 0.35);
+    }
+
+    h1 {
+        margin: 0;
+        font-size: 32px;
+        color: #111827;
+    }
+
+    .subtitulo {
+        margin: 10px 0 0;
+        color: #6b7280;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .passo {
+        margin-top: 18px;
+        padding: 22px;
+        border-radius: 20px;
+        border: 1px solid;
+    }
+
+    .passo h2 {
+        margin: 0 0 8px;
+        font-size: 20px;
+        color: #111827;
+    }
+
+    .passo p {
+        margin: 0 0 18px;
+        color: #4b5563;
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    .passo-1 {
+        background: #fff7ed;
+        border-color: #fed7aa;
+    }
+
+    .passo-2 {
+        background: #ecfdf5;
+        border-color: #bbf7d0;
+    }
+
+    .passo-3 {
+        background: #eff6ff;
+        border-color: #bfdbfe;
+    }
+
+    .botao {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        padding: 16px 22px;
+        border-radius: 14px;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 900;
+        font-size: 16px;
+        transition: transform 0.15s ease, filter 0.15s ease;
+    }
+
+    .botao:hover {
+        transform: translateY(-1px);
+        filter: brightness(0.96);
+    }
+
+    .botao-tamper {
+        background: #f97316;
+    }
+
+    .botao-bot {
+        background: #16a34a;
+    }
+
+    .botao-wms {
+        background: #2563eb;
+    }
+
+    .alerta {
+        margin-top: 22px;
+        padding: 18px;
+        border-radius: 18px;
+        background: #f9fafb;
+        border: 1px solid #e5e7eb;
+        color: #4b5563;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .alerta b {
+        color: #111827;
+    }
+
+    .rodape {
+        margin-top: 22px;
+        text-align: center;
+        color: #9ca3af;
+        font-size: 12px;
+    }
+
+    @media (max-width: 520px) {
+        .card {
+            padding: 24px;
+            border-radius: 22px;
+        }
+
+        h1 {
+            font-size: 26px;
+        }
+
+        .passo {
+            padding: 18px;
+        }
+    }
+</style>
+</head> <body> <main class="pagina"> <section class="card">
+        <div class="topo">
+            <div class="logo">PS</div>
+
+            <h1>Problem Solver Bot</h1>
+
+            <p class="subtitulo">
+                Instalação rápida do bot para uso no WMS.
+                Siga os passos abaixo em ordem.
+            </p>
+        </div>
+
+        <div class="passo passo-1">
+            <h2>1º passo: instalar o Tampermonkey</h2>
+
+            <p>
+                Clique no botão abaixo, instale a extensão no navegador e depois volte para esta página.
+            </p>
+
+            <a
+                class="botao botao-tamper"
+                href="https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?pli=1"
+                target="_blank"
+            >
+                Instalar Tampermonkey
+            </a>
+        </div>
+
+        <div class="passo passo-2">
+            <h2>2º passo: instalar o Problem Solver Bot</h2>
+
+            <p>
+                Depois que o Tampermonkey estiver instalado, clique no botão abaixo e confirme a instalação do script.
+            </p>
+
+            <a
+                class="botao botao-bot"
+                href="https://www.tampermonkey.net/script_installation.php#url=https://gist.githubusercontent.com/LucasEcher-ops/64e8aa2c64b4569ad03f7100f7afebe1/raw/problem-solver-bot-loader.user.js"
+                target="_blank"
+            >
+                Instalar Problem Solver Bot
+            </a>
+        </div>
+
+        <div class="passo passo-3">
+            <h2>3º passo: abrir o WMS</h2>
+
+            <p>
+                Após instalar o bot, abra o WMS normalmente. O loader vai carregar o bot central automaticamente.
+            </p>
+
+            <a
+                class="botao botao-wms"
+                href="https://wms.ssc.shopee.com.br/"
+                target="_blank"
+            >
+                Abrir WMS
+            </a>
+        </div>
+
+        <div class="alerta">
+            <b>Importante:</b><br>
+            1. Primeiro instale o Tampermonkey.<br>
+            2. Depois instale o Problem Solver Bot.<br>
+            3. Se o segundo botão não abrir a tela do Tampermonkey, feche e abra o navegador novamente.<br>
+            4. Se já tiver Tampermonkey instalado, pode ir direto para o 2º passo.
+        </div>
+
+        <div class="rodape">
+            Problem Solver Bot Loader · Lucas Echer
+        </div>
+
+    </section>
+</main>
+</body> </html>
