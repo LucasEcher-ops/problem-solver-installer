@@ -10,9 +10,6 @@
         --laranja-3: #ff8a50;
         --texto: #1f2937;
         --cinza: #6b7280;
-        --verde: #16a34a;
-        --azul: #2563eb;
-        --branco: #ffffff;
         --borda: rgba(238, 77, 45, 0.18);
         --sombra: 0 26px 70px rgba(238, 77, 45, 0.18);
     }
@@ -234,11 +231,11 @@
         border: 1px solid rgba(0,0,0,0.08);
     }
 
-    .video-frame iframe {
+    .video-frame video {
         width: 100%;
-        height: 430px;
         display: block;
-        border: 0;
+        max-height: 520px;
+        background: #111827;
     }
 
     .grid {
@@ -423,10 +420,6 @@
             width: 112px;
         }
 
-        .video-frame iframe {
-            height: 240px;
-        }
-
         .passo {
             padding: 18px;
             grid-template-columns: 48px 1fr;
@@ -502,12 +495,10 @@
                     </p>
 
                     <div class="video-frame">
-                        <iframe
-                            src="https://www.youtube.com/embed/yynMnugLXZE"
-                            title="Tutorial de instalação do Problem Solver Bot"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen
-                        ></iframe>
+                        <video controls preload="metadata">
+                            <source src="./assets/202607070357.mp4" type="video/mp4">
+                            Seu navegador não conseguiu abrir o vídeo.
+                        </video>
                     </div>
                 </div>
 
@@ -584,7 +575,9 @@
 
                     <ul>
                         <li>Confirme se o Tampermonkey foi instalado no navegador.</li>
-                        <li>Depois de instalar a extensão, feche e abra o navegador novamente.</li>
+                        <li>Abra as extensões do Chrome e confirme se a permissão “Permitir scripts de usuário” está ativada no Tampermonkey.</li>
+                        <li>Se essa opção não aparecer, ative o “Modo do desenvolvedor” na tela de extensões.</li>
+                        <li>Depois de instalar ou liberar a permissão, feche e abra o navegador novamente.</li>
                         <li>Volte nesta página e tente clicar em “Instalar bot” outra vez.</li>
                         <li>Se já instalou o bot, abra o WMS e aguarde a página carregar completamente.</li>
                     </ul>
